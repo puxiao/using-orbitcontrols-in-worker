@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "no-restricted-globals": ["error", "event", "fdescribe"],
+        "import/no-webpack-loader-syntax": "off"
+    }
+}
