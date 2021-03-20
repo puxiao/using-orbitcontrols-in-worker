@@ -18,14 +18,14 @@ const OrbitControlsInWorker = () => {
 
         const offscreenCanvas = canvasRef.current.transferControlToOffscreen()
 
-        proxyRef.current = new OrbitControlsProxy(workerRef.current, canvasRef.current)
+        proxyRef.current = new OrbitControlsProxy(workerRef.current, document.body)
         proxyRef.current.createInit(offscreenCanvas)
 
     }
 
     const startMain = () => {
         if (canvasRef.current === null) { return }
-        createWorldRef.current = new CreateWorld(canvasRef.current, canvasRef.current)
+        createWorldRef.current = new CreateWorld(canvasRef.current, document.body)
     }
 
     useEffect(() => {
