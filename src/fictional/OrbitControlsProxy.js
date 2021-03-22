@@ -1,4 +1,4 @@
-import FictionalProxy from "./FictionalProxy"
+import ControlsProxy from "./ControlsProxy"
 import WorkerMessageType from "./WorkerMessageType"
 
 const mouseEventProperties = ['type', 'pointerType', 'button', 'clientX', 'clientY', 'ctrlKey', 'metaKey', 'shiftKey']
@@ -10,7 +10,7 @@ const touchProperties = ['pageX', 'pageY']
 /**
  * @description: OrbitControls Proxy
  */
-class OrbitControlsProxy extends FictionalProxy {
+class OrbitControlsProxy extends ControlsProxy {
 
     /**
      * @param {Worker} worker
@@ -106,7 +106,7 @@ class OrbitControlsProxy extends FictionalProxy {
         this.htmlElement.ownerDocument.addEventListener('pointermove', this.handlePointerMove);
         this.htmlElement.ownerDocument.addEventListener('pointerup', this.handlePointerUp);
 
-        const fictitiousEvent = FictionalProxy.copyProperties(event, mouseEventProperties)
+        const fictitiousEvent = ControlsProxy.copyProperties(event, mouseEventProperties)
         this.sendEventMessage(fictitiousEvent)
     }
 
@@ -118,7 +118,7 @@ class OrbitControlsProxy extends FictionalProxy {
     handleMouseMove = (event) => {
         event.preventDefault();
 
-        const fictitiousEvent = FictionalProxy.copyProperties(event, mouseEventProperties)
+        const fictitiousEvent = ControlsProxy.copyProperties(event, mouseEventProperties)
         this.sendEventMessage(fictitiousEvent)
     }
 
@@ -132,7 +132,7 @@ class OrbitControlsProxy extends FictionalProxy {
         this.htmlElement.ownerDocument.removeEventListener('pointermove', this.handlePointerMove);
         this.htmlElement.ownerDocument.removeEventListener('pointerup', this.handlePointerUp);
 
-        const fictitiousEvent = FictionalProxy.copyProperties(event, mouseEventProperties)
+        const fictitiousEvent = ControlsProxy.copyProperties(event, mouseEventProperties)
         this.sendEventMessage(fictitiousEvent)
     }
 
@@ -143,7 +143,7 @@ class OrbitControlsProxy extends FictionalProxy {
     handleWheelEvent = (event) => {
         event.preventDefault()
 
-        const fictitiousEvent = FictionalProxy.copyProperties(event, wheelEventProperties)
+        const fictitiousEvent = ControlsProxy.copyProperties(event, wheelEventProperties)
         this.sendEventMessage(fictitiousEvent)
     }
 
@@ -154,7 +154,7 @@ class OrbitControlsProxy extends FictionalProxy {
     handleKeyboardEvent = (event) => {
         event.preventDefault()
 
-        const fictitiousEvent = FictionalProxy.copyProperties(event, keyboardEventProperties)
+        const fictitiousEvent = ControlsProxy.copyProperties(event, keyboardEventProperties)
         this.sendEventMessage(fictitiousEvent)
     }
 
@@ -165,11 +165,11 @@ class OrbitControlsProxy extends FictionalProxy {
     handleTouchEvent = (event) => {
         event.preventDefault()
 
-        const fictitiousEvent = FictionalProxy.copyProperties(event, touchEventProperties)
+        const fictitiousEvent = ControlsProxy.copyProperties(event, touchEventProperties)
 
         let touches = []
         for (const touch of event.touches) {
-            touches.push(FictionalProxy.copyProperties(touch, touchProperties))
+            touches.push(ControlsProxy.copyProperties(touch, touchProperties))
         }
         fictitiousEvent.touches = touches
 

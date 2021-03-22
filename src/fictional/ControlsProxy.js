@@ -3,7 +3,7 @@ import WorkerMessageType from "./WorkerMessageType"
 /**
  * @description: Bridge between main and worker
  */
-class FictionalProxy {
+class ControlsProxy {
 
     /**
      * @param {Worker} worker
@@ -14,7 +14,7 @@ class FictionalProxy {
     constructor(worker, htmlElement = null, elementID = 'element') {
 
         if (!(worker instanceof Worker)) {
-            throw new Error('FictionalProxy: the first parameter "worker" is not assignable to type Worker.')
+            throw new Error('ControlsProxy: the first parameter "worker" is not assignable to type Worker.')
         }
 
         this.worker = worker
@@ -23,7 +23,7 @@ class FictionalProxy {
 
         if (htmlElement !== null) {
             if (!(htmlElement instanceof HTMLElement)) {
-                throw new Error('FictionalProxy: the second parameter "htmlElement" is not assignable to type HTMLElement.')
+                throw new Error('ControlsProxy: the second parameter "htmlElement" is not assignable to type HTMLElement.')
             } else {
                 this.worker.postMessage({
                     type: WorkerMessageType.MAKE_ELEMENT,
@@ -93,4 +93,4 @@ class FictionalProxy {
 
 }
 
-export default FictionalProxy
+export default ControlsProxy
