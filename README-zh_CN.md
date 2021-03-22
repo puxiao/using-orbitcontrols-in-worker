@@ -103,35 +103,28 @@
 
 ## 代码结构
 
-| src
-
---------| components/orbitcontrols-in-worker
-
-----------------| create-world.ts
-
-----------------| index.css
-
-----------------| index.tsx
-
-----------------| worker.ts
-
---------| fictional
-
-----------------| ControlsProxy.js
-
-----------------| FictionalElement.js
-
-----------------| FictionalElementManager.js
-
-----------------| FictionalWindow.js
-
-----------------| OrbitControlsProxy.js
-
-----------------| WorkerMessageType.js
-
---------| typing
-
-----------------| worker-load.d.ts
+```
+│
+│ src
+│
+├── components/orbitcontrols-in-worker
+│   ├── create-world.ts
+│   ├── index.css
+│   ├── index.tsx
+│   └── worker.ts
+│
+├── fictional
+│   ├── ControlsProxy.js
+│   ├── FictionalElement.js
+│   ├── FictionalElementManager.js
+│   ├── FictionalWindow.js
+│   ├── OrbitControlsProxy.js
+│   └── WorkerMessageType.js
+│
+└── typing
+│   └── worker-load.d.ts
+│
+```
 
 
 
