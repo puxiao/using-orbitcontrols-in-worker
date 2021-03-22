@@ -139,8 +139,9 @@
 
 ## 提示
 
-* 本项目采用 React + TypeScript + Worker-loader
-* 由于 src/fictional/xxxxx.js 采用 JS + JSDoc 编写，所以你也可以将代码应用在非 TypeScript 项目中
+* 本项目采用 React + TypeScript + Worker-loader。
+* 由于 src/fictional/xxxxx.js 采用 JS + JSDoc 编写，所以你也可以将代码应用在非 TypeScript 项目中。
+* 本项目只考虑了当前 Worker 中只监控 1 个网页元素的情况，如果需要监听多个网页元素，你可以修改 ControlsProxy constructor() 中第 3 个参数。
 
 
 
