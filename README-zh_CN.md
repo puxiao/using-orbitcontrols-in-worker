@@ -105,33 +105,33 @@
 
 | src
 
-​        | components/orbitcontrols-in-worker
+--------| components/orbitcontrols-in-worker
 
-​                | create-world.ts
+----------------| create-world.ts
 
-​                | index.css
+----------------| index.css
 
-​                | index.tsx
+----------------| index.tsx
 
-​                | worker.ts
+----------------| worker.ts
 
-​        | fictional
+--------| fictional
 
-​                | ControlsProxy.js
+----------------| ControlsProxy.js
 
-​                | FictionalElement.js
+----------------| FictionalElement.js
 
-​                | FictionalElementManager.js
+----------------| FictionalElementManager.js
 
-​                | FictionalWindow.js
+----------------| FictionalWindow.js
 
-​                | OrbitControlsProxy.js
+----------------| OrbitControlsProxy.js
 
-​                | WorkerMessageType.js
+----------------| WorkerMessageType.js
 
-​        | typing
+--------| typing
 
-​                | worker-load.d.ts
+----------------| worker-load.d.ts
 
 
 
