@@ -1,6 +1,8 @@
-# using-orbitcontrols-in-worker
+# using-OrbitControls-in-Worker
 
+[English](https://github.com/puxiao/using-orbitcontrols-in-worker/blob/main/README.md) | 简体中文
 
+<br>
 
 ## 问题的根源
 
@@ -12,6 +14,8 @@
 创建一个 OrbitControls 实例时需要指定某个 HTMLElement 元素，在 OrbitControls 内部会对该 HTMLElement 元素添加多个事件监听。
 
 
+
+<br>
 
 > OrbitControls.js 中需要添加的事件侦听
 >
@@ -27,9 +31,12 @@
 > domElement.addEventListener( 'keydown', onKeyDown )
 > ```
 >
-> 查看详情：https://github.com/mrdoob/three.js/blob/dev/examples/jsm/controls/OrbitControls.js
+> 查看详情：
+> https://github.com/mrdoob/three.js/blob/dev/examples/jsm/controls/OrbitControls.js
 
 
+
+<br>
 
 **那么问题来了**
 
@@ -55,7 +62,8 @@
 
 1. 继承于 EventDispatcher，这样便可以拥有 dispatchEvent() 方法
 
-   > EventDispatcher: https://github.com/mrdoob/three.js/blob/dev/src/core/EventDispatcher.js
+   > EventDispatcher:
+   > https://github.com/mrdoob/three.js/blob/dev/src/core/EventDispatcher.js
 
 2. 拥有一些 HTMLElement 相同的一些属性和方法，例如：
 
@@ -63,6 +71,8 @@
    2. focus()、clientWidth()、clientHeight()、getBoundingClientRect()
 
 
+
+<br>
 
 **虚构的window**
 
@@ -72,6 +82,8 @@
 
 
 
+<br>
+
 **网页元素各种事件代理者**
 
 1. 添加各种事件侦听
@@ -80,12 +92,16 @@
 
 
 
+<br>
+
 **Worker接收消息后做出相应的处理**
 
 1. 根据消息的类型，做出相应的处理
 2. 如果消息的类型是交互事件，则让 “虚构的网页元素 或 window” 抛出该事件
 
 
+
+<br>
 
 这样，运行在 Web Worker 中的 OrbitControls 便可以正常监听到该事件了。
 
@@ -183,6 +199,8 @@
    > Chrome: 'start in worker'
    >
    > Firefox: 'start in main'
+   
+   > 目前火狐浏览器并不支持 OffscreenCanvas。
 
 
 
