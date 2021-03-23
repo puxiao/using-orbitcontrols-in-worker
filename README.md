@@ -1,7 +1,7 @@
 # using-OrbitControls-in-Worker
 English | [简体中文](https://github.com/puxiao/using-orbitcontrols-in-worker/blob/main/README-zh_CN.md)
 
-<br>
+
 
 ## Motivation
 
@@ -36,6 +36,8 @@ When you create an OrbitControls instance, you need to specify an HTMLElement th
 
 
 
+<br>
+
 **That's the problem**
 
 HTMLElement elements cannot be retrieved and various event listeners added in the Web Worker.
@@ -53,6 +55,8 @@ So what should we do?
 We can use "Fictitious HTMLElement" in the Web Worker for OrbitControls.
 
 
+
+<br>
 
 **Fictional HTMLElement:**
 

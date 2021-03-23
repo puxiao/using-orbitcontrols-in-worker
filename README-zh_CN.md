@@ -2,7 +2,7 @@
 
 [English](https://github.com/puxiao/using-orbitcontrols-in-worker/blob/main/README.md) | 简体中文
 
-<br>
+
 
 ## 问题的根源
 
@@ -57,6 +57,8 @@
 我们可以通过在 Web Worker 中 “虚构网页元素” 的方式来让 OrbitControls 可以正常运行。
 
 
+
+<br>
 
 **虚构的网页元素：**
 
