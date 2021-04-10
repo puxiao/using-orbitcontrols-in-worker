@@ -3,7 +3,16 @@ import WorkerMessageType from "./WorkerMessageType"
 
 const mouseEventProperties = ['type', 'pointerType', 'button', 'clientX', 'clientY', 'ctrlKey', 'metaKey', 'shiftKey']
 const wheelEventProperties = ['type', 'deltaY']
-const keyboardEventProperties = ['type', 'code', 'keyCode']
+
+/**
+ * If your Three.js ^0.127.0
+ * OrbitControls/TrackballControls: Replace event.keyCode with event.code
+ * https://github.com/mrdoob/three.js/pull/21409
+ */
+
+//const keyboardEventProperties = ['type', 'code'] //Three.js ^0.127.0
+const keyboardEventProperties = ['type', 'keyCode']
+
 const touchEventProperties = ['type']
 const touchProperties = ['pageX', 'pageY']
 
